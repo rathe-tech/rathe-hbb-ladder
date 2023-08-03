@@ -4,5 +4,8 @@
   "version": "1.0.0",
   "description": "Hubble HBB stakers ladder",
   "author": "Max Koverdyaev",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
 }
