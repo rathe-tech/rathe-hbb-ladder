@@ -5,6 +5,29 @@ window.onload = async () => {
   const donationWallet = document.getElementById("donation-wallet");
   const stakerCardTemplate = document.getElementById("staker-card-template");
 
+  function formatAmount(amount) {
+    const [whole, decimal] = amount.split(".");
+
+    const partialSize = whole.length % 3;
+    const fullCount = (whole.length - partialSize) / 3;
+    const chunks = [];
+
+    if (partialSize !== 0) {
+      const chunk = whole.substring(0, partialSize);
+      chunks.push(chunk);
+    }
+
+    for (let i = 0; i < fullCount; i++) {
+      const startIndex = i * 3 + partialSize;
+      const endIndex = startIndex + 3;
+      const chunk = whole.substring(startIndex, endIndex);
+      chunks.push(chunk)
+    }
+    
+    const formattedWhole = chunks.join(",") || "0";
+    return [formattedWhole, ".", decimal || "0"].join("");
+  }
+
   function createStakerCard({ index, address, amount }) {
     const cardElem = stakerCardTemplate.content.cloneNode(true);
     const posElem = cardElem.querySelector(".staker-number-value");
@@ -13,7 +36,7 @@ window.onload = async () => {
 
     posElem.textContent = index + 1;
     addressElem.textContent = address;
-    amountElem.textContent = amount;
+    amountElem.textContent = formatAmount(amount);
 
     return cardElem;
   }
