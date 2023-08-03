@@ -45,7 +45,7 @@ window.onload = async () => {
       renderError();
     } finally {
       updateButton.removeAttribute("disabled");
-      updateButton.textContent("Fetch stakers");
+      updateButton.textContent = "Fetch stakers";
     }
   }
 
