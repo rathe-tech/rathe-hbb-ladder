@@ -41,7 +41,8 @@ window.onload = async () => {
 
       const stakers = await fetchHbbStakers();
       renderHbbStakers(stakers);
-    } catch {
+    } catch (e) {
+      console.log(e);
       renderError();
     } finally {
       updateButton.removeAttribute("disabled");
