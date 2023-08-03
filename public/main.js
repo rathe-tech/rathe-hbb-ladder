@@ -26,7 +26,7 @@ window.onload = async () => {
       const chunk = whole.substring(startIndex, endIndex);
       chunks.push(chunk)
     }
-    
+
     const formattedWhole = chunks.join(",") || "0";
     return [formattedWhole, ".", decimal || "0"].join("");
   }
