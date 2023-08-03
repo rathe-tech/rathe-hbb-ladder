@@ -126,3 +126,20 @@ h1 {
   opacity: 0.75;
   cursor: not-allowed;
 }
+
+.donation-panel {
+  margin-top: 1em;
+  background-color: #015f1f;
+  padding: 0.75em;
+  color: white;
+}
+
+.donation-wallet {
+  margin-top: 0.5em;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: underline dashed;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+}

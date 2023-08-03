@@ -1,6 +1,8 @@
 window.onload = async () => {
   const updateButton = document.getElementById("update-button");
   const ladderPanel = document.getElementById("ladder-panel");
+  const donationPanel = document.getElementById("donation-panel");
+  const donationWallet = document.getElementById("donation-wallet");
   const stakerCardTemplate = document.getElementById("staker-card-template");
 
   function createStakerCard({ index, address, amount }) {
@@ -27,6 +29,10 @@ window.onload = async () => {
     ladderPanel.textContent = `Could not fetch data: ${e}`;
   }
 
+  function showDonationPanel() {
+    donationPanel.removeAttribute("style");
+  }
+
   async function fetchHbbStakers() {
     const response = await fetch("/.netlify/functions/hbb-stakers");
     const stakers = await response.json();
@@ -41,9 +47,11 @@ window.onload = async () => {
 
       const stakers = await fetchHbbStakers();
       renderHbbStakers(stakers);
+      showDonationPanel();
     } catch (e) {
       renderError(e);
     } finally {
+      showDonationPanel();
       updateButton.removeAttribute("disabled");
       updateButton.textContent = "Fetch stakers";
     }
@@ -51,6 +59,11 @@ window.onload = async () => {
 
   updateButton.addEventListener("click", async () => {
     await updatePage();
+  });
+
+  donationWallet.addEventListener("click", async () => {
+    await navigator.clipboard.writeText("1DxMVkgaKW4sCNJcXGHGGEb2kv4Jh3Q4Wd9RjEvMP73");
+    alert("Wallet address copied!");
   });
 
   await updatePage();
