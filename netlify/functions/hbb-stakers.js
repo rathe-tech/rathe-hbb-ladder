@@ -5,6 +5,9 @@ export const handler = async ()=> {
     const data = await response.json();
     return {
       statusCode: 200,
+      headers: {
+        "content-type": "text/json"
+      },
       body: JSON.stringify(data)
     };
   } else {
