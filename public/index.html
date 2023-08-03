@@ -1,16 +1,44 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="theme.css">
     <script src="main.js"></script>
   </head>
   <body>
-    <h1>Hubble HBB stakers ladder</h1>
-    <div>
-      <button id="update-button">Fetch stakers</button>
-    </div>
-    <div id="ladder-panel">
-
+    <div id="content">
+      <h1>Hubble HBB stakers ladder</h1>
+      <div>
+        <button id="update-button">Fetch stakers</button>
+      </div>
+      <div id="ladder-panel">
+      </div>
     </div>
   </body>
+  <template id="staker-card-template">
+    <div class="staker-card">
+      <div class="staker-number">
+        <div class="staker-number-title">
+          Position
+        </div>
+        <div class="staker-number-value">
+        </div>
+      </div>
+      <div class="staker-address">
+        <div class="staker-address-title">
+          Address
+        </div>
+        <div class="staker-address-value">
+        </div>
+      </div>
+      <div class="staker-amount">
+        <div class="staker-amount-title">
+          HBB amount
+        </div>
+        <div class="staker-amount-value">
+        </div>
+      </div>
+    </div>
+  </template>
 </html>

@@ -1,5 +1,117 @@
+* {
+  box-sizing: border-box;
+}
+
 body,
 html {
   background-color: #222;
-  color: #ccc
+  color: #ccc;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+#content {
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 0.5em;
+}
+
+@media (max-width: 900px)  {
+  #content {
+    width: 100%;
+  }
+}
+
+h1 {
+  color: white;
+  text-transform: uppercase;
+  margin-top: 0.35em;
+  margin-bottom: 0.35em;
+}
+
+#ladder-panel {
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5em;
+}
+
+.staker-card {
+  border: 1px solid #666;
+  padding: 0.5em 0.75em;
+  display: flex;
+  gap: 0.75em;
+}
+
+@media (max-width: 900px) {
+  .staker-card {
+    flex-direction: column;
+  }
+}
+
+.staker-number {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+}
+
+.staker-number-title {
+  font-size: 12px;
+}
+
+.staker-number-value {
+  color: white;
+  font-weight: bold;
+}
+
+.staker-address {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.25em;
+}
+
+.staker-address-title {
+  font-size: 12px;
+}
+
+.staker-address-value {
+  color: white;
+  font-weight: bold;
+}
+
+.staker-amount {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.25em;
+}
+
+.staker-amount-title {
+  display: flex;
+  justify-content: right;
+  font-size: 12px;
+}
+
+.staker-amount-value {
+  display: flex;
+  justify-content: right;
+  color: white;
+  font-weight: bold;
+}
+
+@media (max-width: 900px) {
+  .staker-amount-title, .staker-amount-value {
+    justify-content: left;
+  }
+}
+
+#update-button {
+  border: none;
+  background-color: royalblue;
+  color: white;
+  padding: 0.5em 0.5em;
+  font-size: 16px;
+  cursor: pointer;
 }
