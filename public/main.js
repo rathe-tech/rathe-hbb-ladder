@@ -5,6 +5,6 @@ window.onload = () => {
   updateButton.addEventListener("click", async () => {
     const response = await fetch("/.netlify/functions/hbb-stakers");
     const data = await response.json();
-    ladderPanel.innerText = data;
+    ladderPanel.innerText = JSON.stringify(data, null, 4);
   });
 };
