@@ -5,7 +5,7 @@ window.onload = async () => {
   const donationWallet = document.getElementById("donation-wallet");
   const statsElem = document.getElementById("stats");
   const activeStakersElem = document.getElementById("active-stakers");
-  const hbbStakedElem = document.getElementById("active-stakers");
+  const hbbStakedElem = document.getElementById("hbb-staked");
   const stakerCardTemplate = document.getElementById("staker-card-template");
 
   function formatAmount(amount) {
