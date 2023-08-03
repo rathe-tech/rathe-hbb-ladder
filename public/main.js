@@ -23,8 +23,8 @@ window.onload = async () => {
     });
   }
 
-  function renderError() {
-    
+  function renderError(e) {
+    ladderPanel.textContent = `Could not fetch data: ${e}`;
   }
 
   async function fetchHbbStakers() {
@@ -42,8 +42,7 @@ window.onload = async () => {
       const stakers = await fetchHbbStakers();
       renderHbbStakers(stakers);
     } catch (e) {
-      console.log(e);
-      renderError();
+      renderError(e);
     } finally {
       updateButton.removeAttribute("disabled");
       updateButton.textContent = "Fetch stakers";
