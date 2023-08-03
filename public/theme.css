@@ -43,6 +43,44 @@ h1 {
   row-gap: 0.5em;
 }
 
+.stats {
+  margin-top: 1em;
+  display: flex;
+  gap: 1em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #666;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 900px)  {
+  .stats {
+    flex-direction: column;
+  }
+}
+
+.stats-card {
+  flex: 1;
+  border: 1px solid #666;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 18px;
+  row-gap: 0.5em;
+  padding: 0.5em 0.75em;
+}
+
+.stats-card-title {
+  font-size: 18px;
+}
+
+.stats-card-value {
+  font-size: 28px;
+  color: white;
+}
+
 .staker-card {
   border: 1px solid #666;
   padding: 0.5em 0.75em;

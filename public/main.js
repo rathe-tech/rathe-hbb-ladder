@@ -3,6 +3,9 @@ window.onload = async () => {
   const ladderPanel = document.getElementById("ladder-panel");
   const donationPanel = document.getElementById("donation-panel");
   const donationWallet = document.getElementById("donation-wallet");
+  const statsElem = document.getElementById("stats");
+  const activeStakersElem = document.getElementById("active-stakers");
+  const hbbStakedElem = document.getElementById("active-stakers");
   const stakerCardTemplate = document.getElementById("staker-card-template");
 
   function formatAmount(amount) {
@@ -48,6 +51,14 @@ window.onload = async () => {
     });
   }
 
+  function renderTotalStats(stakers) {
+    activeStakersElem.textContent = stakers.length;
+    hbbStakedElem.textContent = formatAmount(stakers.reduce((v, s) => {
+      return v + parseFloat(s.staked);
+    }, 0).toFixed(6));
+    statsElem.classList.toggle("hidden");
+  }
+
   function renderError(e) {
     ladderPanel.textContent = `Could not fetch data: ${e}`;
   }
@@ -65,10 +76,12 @@ window.onload = async () => {
   async function updatePage() {
     try {
       updateButton.setAttribute("disabled", true);
+      statsElem.classList.add("hidden");
       updateButton.textContent = "Fetching stakers...";
       ladderPanel.textContent = "";
 
       const stakers = await fetchHbbStakers();
+      renderTotalStats(stakers);
       renderHbbStakers(stakers);
       showDonationPanel();
     } catch (e) {
