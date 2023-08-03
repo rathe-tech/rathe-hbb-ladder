@@ -85,6 +85,8 @@ h1 {
 .staker-address-value {
   color: white;
   font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .staker-amount {
