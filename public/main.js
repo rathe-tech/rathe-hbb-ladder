@@ -36,7 +36,7 @@ window.onload = async () => {
   async function updatePage() {
     try {
       updateButton.setAttribute("disabled", true);
-      updateButton.textContent("Fetching stakers...");
+      updateButton.textContent = "Fetching stakers...";
       ladderPanel.textContent = "";
 
       const stakers = await fetchHbbStakers();
