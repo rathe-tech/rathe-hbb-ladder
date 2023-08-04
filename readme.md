@@ -2,7 +2,7 @@
 
 A missing part of the Hubble protocol UI. Now you can check the HBB stakers ladder and some additional stats.
 
-Deploy at: https://hbb-ladder.netlify.app/
+Deployed at: https://hbb-ladder.netlify.app/
 
 ## License
 MIT © Rathe Technologies and its contributors
