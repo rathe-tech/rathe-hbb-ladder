@@ -39,6 +39,7 @@ window.onload = async () => {
 
     posElem.textContent = index + 1;
     addressElem.textContent = address;
+    addressElem.setAttribute("href", `https://solscan.io/account/${address}`);
     amountElem.textContent = formatAmount(amount);
 
     return cardElem;
