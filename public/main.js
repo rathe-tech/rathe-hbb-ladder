@@ -70,6 +70,9 @@ window.onload = async () => {
 
   async function fetchHbbStakers() {
     const response = await fetch("/.netlify/functions/hbb-stakers");
+    if (response.status !== 200) {
+      throw new Error(`HTTP status: ${response.status}`);
+    }
     const stakers = await response.json();
     return stakers.sort((x, y) => y.staked - x.staked);
   }
