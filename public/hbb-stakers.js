@@ -1,3 +1,5 @@
+import * as api from "./api.js";
+
 window.onload = async () => {
   const updateButton = document.getElementById("update-button");
   const ladderPanel = document.getElementById("ladder-panel");
@@ -68,15 +70,6 @@ window.onload = async () => {
     donationPanel.removeAttribute("style");
   }
 
-  async function fetchHbbStakers() {
-    const response = await fetch("/.netlify/functions/hbb-stakers");
-    if (response.status !== 200) {
-      throw new Error(`HTTP status: ${response.status}`);
-    }
-    const stakers = await response.json();
-    return stakers.sort((x, y) => y.staked - x.staked);
-  }
-
   async function updatePage() {
     try {
       updateButton.setAttribute("disabled", true);
@@ -84,7 +77,7 @@ window.onload = async () => {
       updateButton.textContent = "Fetching stakers...";
       ladderPanel.textContent = "";
 
-      const stakers = await fetchHbbStakers();
+      const stakers = await api.getHbbStakers();
       renderTotalStats(stakers);
       renderHbbStakers(stakers);
       showDonationPanel();
