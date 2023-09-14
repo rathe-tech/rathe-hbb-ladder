@@ -7,7 +7,7 @@ export async function getHbbStakers() {
   return stakers.sort((x, y) => y.staked - x.staked);
 }
 
-export async function getKaminoLeaderboard({ period = "24h", asc = false }) {
+export async function getKaminoLeaderboard({ period, asc = false }) {
   const response = await fetch(`/.netlify/functions/kamino-leaderboard?period=${period}`);
   if (response.status !== 200) {
     throw new Error(`HTTP status: ${response.status}`);

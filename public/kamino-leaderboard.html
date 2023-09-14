@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:site_name" content="Kamino leaderboard">
+    <meta property="og:title" content="Kamino leaderboard">
+    <meta property="og:description" content="Explore Kamino strategies without hassle">
+    <meta property="og:url" content="https://hbb-ladder.netlify.app/">
+    <meta property="og:image" content="/preview.png">
+    <meta property="og:type" content="website">
+    <title>Kamino leaderboard</title>
+    <link rel="stylesheet" type="text/css" href="theme.css">
+    <script type="module" src="./kamino-leaderboard.js"></script>
+  </head>
+  <body>
+    <div id="content">
+      <div id="strategy-panel">
+      </div>
+    </div>
+  </body>
+  <template id="strategy-card-template">
+    <div class="strategy-address-value"></div>
+    <div class="strategy-apy-value"></div>
+    <div class="strategy-pnl-value"></div>
+    <div class="strategy-volume-value"></div>
+    <div class="strategy-fees-value"></div>
+    <div class="strategy-tvl-value"></div>
+  </template>
+</html>
