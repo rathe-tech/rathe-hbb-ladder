@@ -12,6 +12,5 @@ export async function getKaminoLeaderboard({ period }) {
   if (response.status !== 200) {
     throw new Error(`HTTP status: ${response.status}`);
   }
-  const { strategies } = await response.json();
-  return strategies;
+  return await response.json();
 }
