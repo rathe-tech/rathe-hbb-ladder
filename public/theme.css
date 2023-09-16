@@ -39,6 +39,10 @@ h1 {
   flex: 1;
 }
 
+.ellipsis {
+  text-overflow: ellipsis;
+}
+
 #content {
   margin: 0 auto;
   max-width: 900px;
@@ -111,8 +115,18 @@ h1 {
   gap: 0.25em;
 }
 
-.staker-number-title {
+.card-title {
   font-size: 12px;
+}
+
+.right-or-left {
+  justify-content: right;
+}
+
+@media (max-width: 900px) {
+  .right-or-left {
+    justify-content: left;
+  }
 }
 
 .staker-number-value {
@@ -120,21 +134,10 @@ h1 {
   font-weight: bold;
 }
 
-.staker-address-title {
-  font-size: 12px;
-}
-
 .staker-address-value {
   color: var(--text-primary-color);
   font-weight: bold;
   overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.staker-amount-title {
-  display: flex;
-  justify-content: right;
-  font-size: 12px;
 }
 
 .staker-amount-value {
@@ -142,12 +145,6 @@ h1 {
   justify-content: right;
   color: var(--text-primary-color);
   font-weight: bold;
-}
-
-@media (max-width: 900px) {
-  .staker-amount-title, .staker-amount-value {
-    justify-content: left;
-  }
 }
 
 #update-button {
