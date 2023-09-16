@@ -6,14 +6,15 @@ window.onload = async () => {
 
   function createStrategyCard({ index, strategy }) {
     const cardElem = strategyCardTemplate.content.cloneNode(true);
-    const addressElem = cardElem.querySelector(".strategy-address-value");
-    const apyElem = cardElem.querySelector(".strategy-apy-value");
-    const pnlElem = cardElem.querySelector(".strategy-pnl-value");
-    const volumeElem = cardElem.querySelector(".strategy-volume-value");
-    const feesElem = cardElem.querySelector(".strategy-fees-value");
-    const tvlElem = cardElem.querySelector(".strategy-tvl-value");
+    const addressElem = cardElem.querySelector(".address");
+    const apyElem = cardElem.querySelector(".apy");
+    const pnlElem = cardElem.querySelector(".pnl");
+    const volumeElem = cardElem.querySelector(".volume");
+    const feesElem = cardElem.querySelector(".fees");
+    const tvlElem = cardElem.querySelector(".tvl");
 
     addressElem.textContent = strategy.strategy;
+    addressElem.setAttribute("href", `https://app.kamino.finance/liquidity/${address}`);
     apyElem.textContent = strategy.apy;
     pnlElem.textContent = strategy.pnl;
     volumeElem.textContent = strategy.volume;
@@ -31,7 +32,7 @@ window.onload = async () => {
   }
 
   async function updatePage() {
-    const { strategies } = await(await fetch("./leaderboard.json")).json();//await api.getKaminoLeaderboard({ period: "24h" });
+    const { strategies } = await api.getKaminoLeaderboard({ period: "24h" });//await(await fetch("./leaderboard.json")).json();
     renderStrategies(strategies);
   }
 
