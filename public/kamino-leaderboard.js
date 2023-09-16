@@ -1,7 +1,7 @@
 import * as api from "./api.js";
 
 window.onload = async () => {
-  const strategyCardTemplate = document.getElementById("strategy-card-template");
+  const strategyCardTemplate = document.getElementById("card-template");
   const strategyPanel = document.getElementById("strategy-panel");
 
   function createStrategyCard({ index, strategy }) {
@@ -31,7 +31,7 @@ window.onload = async () => {
   }
 
   async function updatePage() {
-    const strategies = await api.getKaminoLeaderboard({ period: "24h" });
+    const { strategies } = await(await fetch("./leaderboard.json")).json();//await api.getKaminoLeaderboard({ period: "24h" });
     renderStrategies(strategies);
   }
 

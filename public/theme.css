@@ -24,6 +24,21 @@ html {
   margin: 0;
 }
 
+h1 {
+  color: var(--text-primary-color);
+  text-transform: uppercase;
+  margin-top: 0.35em;
+  margin-bottom: 0.35em;
+}
+
+.hidden {
+  display: none;
+}
+
+.flex-one {
+  flex: 1;
+}
+
 #content {
   margin: 0 auto;
   max-width: 900px;
@@ -36,14 +51,7 @@ html {
   }
 }
 
-h1 {
-  color: var(--text-primary-color);
-  text-transform: uppercase;
-  margin-top: 0.35em;
-  margin-bottom: 0.35em;
-}
-
-#ladder-panel {
+#ladder-panel, #strategy-panel {
   margin-top: 1em;
   display: flex;
   flex-direction: column;
@@ -56,10 +64,6 @@ h1 {
   gap: 1em;
   padding-bottom: 1em;
   border-bottom: 1px solid var(--border-color);
-}
-
-.hidden {
-  display: none;
 }
 
 @media (max-width: 900px)  {
@@ -88,7 +92,7 @@ h1 {
   color: var(--text-primary-color);
 }
 
-.staker-card {
+.card {
   border: 1px solid var(--border-color);
   padding: 0.5em 0.75em;
   display: flex;
@@ -96,12 +100,12 @@ h1 {
 }
 
 @media (max-width: 900px) {
-  .staker-card {
+  .card {
     flex-direction: column;
   }
 }
 
-.staker-number {
+.card-section {
   display: flex;
   flex-direction: column;
   gap: 0.25em;
@@ -116,13 +120,6 @@ h1 {
   font-weight: bold;
 }
 
-.staker-address {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  gap: 0.25em;
-}
-
 .staker-address-title {
   font-size: 12px;
 }
@@ -132,13 +129,6 @@ h1 {
   font-weight: bold;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.staker-amount {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  gap: 0.25em;
 }
 
 .staker-amount-title {

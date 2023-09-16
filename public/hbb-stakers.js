@@ -8,7 +8,7 @@ window.onload = async () => {
   const statsElem = document.getElementById("stats");
   const activeStakersElem = document.getElementById("active-stakers");
   const hbbStakedElem = document.getElementById("hbb-staked");
-  const stakerCardTemplate = document.getElementById("staker-card-template");
+  const stakerCardTemplate = document.getElementById("card-template");
 
   function formatAmount(amount) {
     const [whole, decimal] = amount.split(".");
