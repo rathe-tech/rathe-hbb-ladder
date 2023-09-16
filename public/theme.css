@@ -39,6 +39,10 @@ h1 {
   flex: 1;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .ellipsis {
   text-overflow: ellipsis;
 }
@@ -130,18 +134,7 @@ h1 {
   }
 }
 
-.staker-number-value {
-  color: var(--text-primary-color);
-  font-weight: bold;
-}
-
-.staker-address-value {
-  color: var(--text-primary-color);
-  font-weight: bold;
-  overflow: hidden;
-}
-
-.staker-amount-value {
+.card-value {
   display: flex;
   color: var(--text-primary-color);
   font-weight: bold;
