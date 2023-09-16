@@ -142,7 +142,6 @@ h1 {
 
 .staker-amount-value {
   display: flex;
-  justify-content: right;
   color: var(--text-primary-color);
   font-weight: bold;
 }
