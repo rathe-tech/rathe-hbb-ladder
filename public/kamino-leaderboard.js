@@ -6,6 +6,7 @@ window.onload = async () => {
 
   function createStrategyCard({ index, strategy }) {
     const cardElem = strategyCardTemplate.content.cloneNode(true);
+    const posElem = cardElem.querySelector(".position");
     const addressElem = cardElem.querySelector(".address");
     const apyElem = cardElem.querySelector(".apy");
     const pnlElem = cardElem.querySelector(".pnl");
@@ -13,6 +14,7 @@ window.onload = async () => {
     const feesElem = cardElem.querySelector(".fees");
     const tvlElem = cardElem.querySelector(".tvl");
 
+    posElem.textContent = index + 1;
     addressElem.textContent = strategy.strategy;
     addressElem.setAttribute("href", `https://app.kamino.finance/liquidity/${strategy.strategy}`);
     apyElem.textContent = strategy.apy;
