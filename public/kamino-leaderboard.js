@@ -14,7 +14,7 @@ window.onload = async () => {
     const tvlElem = cardElem.querySelector(".tvl");
 
     addressElem.textContent = strategy.strategy;
-    addressElem.setAttribute("href", `https://app.kamino.finance/liquidity/${address}`);
+    addressElem.setAttribute("href", `https://app.kamino.finance/liquidity/${strategy.strategy}`);
     apyElem.textContent = strategy.apy;
     pnlElem.textContent = strategy.pnl;
     volumeElem.textContent = strategy.volume;
