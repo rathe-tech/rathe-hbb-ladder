@@ -116,6 +116,7 @@ h1 {
 }
 
 .card-title {
+  display: flex;
   font-size: 12px;
 }
 
